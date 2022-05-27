@@ -12,39 +12,10 @@ let salon={
         close:"5:00 p.m."
     },
     phone:"555-555-5555",
-    pets:[
-        {
-            name:"Scooby",
-            age:"50",
-            gender:"Male",
-            breed:"Dane",
-            service:"Grooming",
-            owner:"Shaggy",
-            phone:"888-888-8888",
-        },
-        {
-            name:"ToeToe",
-            age:"35",
-            gender:"Female",
-            breed:"Spaniel",
-            service:"Grooming",
-            owner:"Dorothy",
-            phone:"888-888-8888", 
-        },
-        {
-            name:"Cujo",
-            age:"45",
-            gender:"Male",
-            breed:"Rott",
-            service:"Grooming",
-            owner:"David",
-            phone:"888-888-8888",
-        }
-    ]
+    pets:[]
 }
 
 
-console.log(salon.pets[0]);
 
 function displaySalonInfo(){
     let tmp=`
@@ -52,12 +23,63 @@ function displaySalonInfo(){
     <p>Finest Salon You've Ever Seen</p>
     `;
     document.getElementById("info").innerHTML=tmp;
-}
-displaySalonInfo();
-function displayNames(){
-    for(let i=0;i<salon.pets.length;i++){
-        console.log(salon.pets[1]);
-    }
+    console.log("displaying");
 }
 
-alert(` ${"3 pets currently registered"}`);
+
+
+//create the pet constructor
+// name, age, gender, breed, service, owner, phone
+function Pet(name,age,gender,breed,service,owner,phone){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.breed = breed;
+    this.service = service;
+    this.ownersName = owner;//*
+    this.contactPhone = phone;//*
+}
+
+//create default pets
+let katy = new Pet("Katy", "12", "Female", "Rottweiler", "wash", "David", "555-555-5555");
+
+let lola = new Pet("Lola", "10", "Female", "Daschund", "wash and trim", "Tonya", "535-555-5555");
+
+let rocco = new Pet("Rocco", "8", "Male", "Doberman", "trim", "Jessie", "555-515-5555");
+
+let bella = new Pet("Bella", "5", "Female", "Terrier", "wash", "John", "555-555-6255");
+
+let jojo = new Pet("JoJo", "16", "Male", "Poodle", "trim", "Mike", "555-555-5560");
+
+
+
+//register pets
+function register(){
+    console.log("Registering");
+    //get the info from the inputs ***getElementById().value
+let petName=document.getElementById("txtName").value;
+let petAge=document.getElementById("textAge").value;
+let petGender=document.getElementById("txtGender");
+let petBreed=document.getElementById("txtBreed");
+let petService=document.getElementById("selService");
+let petOwner=document.getElementById("txtOwner");
+let contactPhone=document.getElementById("txtPhone")
+   
+    //create the object using the constructor
+let newPet= new Pet(petName, petAge, petGender, petBreed, petService, petOwner, contactPhone);
+    
+    //push the object in on the array
+   salon.pets.push(newPet);
+    
+   //display it on the console
+      console.log(newPet);
+      console.log(salon.pets);  
+}
+
+function init(){
+    //hook events triggered events
+    displaySalonInfo();
+    salon.pets.push(katy,bella);
+}
+
+window.onload=init;

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">;
     <title>The Fashion Pet</title>
 </head>
@@ -22,7 +23,44 @@
     <main>
         <h2>Welcome to the Fashion Pet</h2>
         <!--reg form name, age, gender, breed,service, owner, phone-->
-        
+        <div class="form-container">
+            <div>
+                <label>Name:</label>
+                <input type="text" placeholder="Enter pet's name" id="txtName">
+            </div>
+            <div>
+                <label>Age:</label>
+                <input type="number" placeholder="Add the pet's age" id="txtAge">
+            </div>
+            <div>
+                <label>Gender:</label>
+                <input type="text" placeholder="Enter the pet's gender" id="txtGender">
+            </div>
+            <div>
+                <label>Breed:</label>
+                <input type="text" placeholder="Enter the pet's breed" id="txtBreed">
+            </div>
+            <div>
+                <label class="form-label">Service</lablel>
+                <select class="form-select id="selService">
+                    <option value="nails cut">Nails cut</option>
+                    <option value="grooming">Grooming</option>
+                    <option value="vaccines">Vaccines</option>
+                </select>
+            </div>
+            
+            <div>
+                <label>Owner:</label>
+                <input type="text" placeholder="Enter the pet's owner" id="txtOwner">
+            </div>
+            <div>
+                <label>Phone:</label>
+                <input type="number" placeholder="Enter the pet's phone number" id="txtPhone">
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" onclick="register()">Register</button>
+            </div>
+        </div>
     </main>
 
     <footer id="info">
