@@ -42,7 +42,7 @@ let salon={
         }
     ]
 }
-window.alert("3 pets total");
+
 
 console.log(salon.pets[0]);
 
@@ -60,4 +60,4 @@ function displayNames(){
     }
 }
 
-displayNames();
+alert(` ${"3 pets currently registered"}`);
