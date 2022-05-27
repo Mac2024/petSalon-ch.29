@@ -45,3 +45,12 @@ console.log(product1, product2, product3);
 products=[product1, product2, product3];
 
 console.log(products[2].name);
+
+
+// Practice for salon display
+
+function displayNames(){
+    for(let i=0;i<products.length;i++){
+        console.log(products[i].)
+    }
+}
