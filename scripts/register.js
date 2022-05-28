@@ -59,11 +59,11 @@ function register(){
     //get the info from the inputs ***getElementById().value
 let petName=document.getElementById("txtName").value;
 let petAge=document.getElementById("textAge").value;
-let petGender=document.getElementById("txtGender");
-let petBreed=document.getElementById("txtBreed");
-let petService=document.getElementById("selService");
-let petOwner=document.getElementById("txtOwner");
-let contactPhone=document.getElementById("txtPhone")
+let petGender=document.getElementById("txtGender").value;
+let petBreed=document.getElementById("txtBreed").value;
+let petService=document.getElementById("selService".value);
+let petOwner=document.getElementById("txtOwner").value;
+let contactPhone=document.getElementById("txtPhone").value;
    
     //create the object using the constructor
 let newPet= new Pet(petName, petAge, petGender, petBreed, petService, petOwner, contactPhone);
