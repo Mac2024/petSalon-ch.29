@@ -41,15 +41,15 @@ function Pet(name,age,gender,breed,service,owner,phone){
 }
 
 //create default pets
-let katy = new Pet("Katy", "12", "Female", "Rottweiler", "wash", "David", "555-555-5555");
+let pet1 = new Pet("Katy", "12", "Female", "Rottweiler", "wash", "David", "555-555-5555");
 
-let lola = new Pet("Lola", "10", "Female", "Daschund", "wash and trim", "Tonya", "535-555-5555");
+let pet2 = new Pet("Lola", "10", "Female", "Daschund", "wash and trim", "Tonya", "535-555-5555");
 
-let rocco = new Pet("Rocco", "8", "Male", "Doberman", "trim", "Jessie", "555-515-5555");
+let pet3 = new Pet("Rocco", "8", "Male", "Doberman", "trim", "Jessie", "555-515-5555");
 
-let bella = new Pet("Bella", "5", "Female", "Terrier", "wash", "John", "555-555-6255");
+let pet4 = new Pet("Bella", "5", "Female", "Terrier", "wash", "John", "555-555-6255");
 
-let jojo = new Pet("JoJo", "16", "Male", "Poodle", "trim", "Mike", "555-555-5560");
+let pet5 = new Pet("JoJo", "16", "Male", "Poodle", "trim", "Mike", "555-555-5560");
 
 
 
@@ -74,6 +74,18 @@ let newPet= new Pet(petName, petAge, petGender, petBreed, petService, petOwner, 
    //display it on the console
       console.log(newPet);
       console.log(salon.pets);  
+      //clear the form
+      clear();
+}
+
+function clear(){
+    let inputs=document.getElementsByTagName('input');
+    for (let i=0;i<inputs.length;i++){
+        inputs[i].value="";
+    }
+    return
+
+    console.log(inputs);
 }
 
 function init(){
