@@ -1,6 +1,6 @@
 //object literal
 let salon={
-    name: "The Fashion Pet",
+    name: "The Fresh Pet Lounge",
     address:{
         street:"Palomar",
         zip:"223456",
@@ -17,14 +17,14 @@ let salon={
 
 
 
-function displaySalonInfo(){
-    let tmp=`
-    <p>Welcome to the ${salon.name} located in ${salon.address.city.street}</p>
-    <p>Finest Salon You've Ever Seen</p>
-    `;
-    document.getElementById("info").innerHTML=tmp;
-    console.log("displaying");
-}
+//function displaySalonInfo(){
+    //let tmp=`
+    //<p>Welcome to the ${salon.name} located in ${salon.address.city.street}</p>
+    ///<p>Finest Salon You've Ever Seen</p>
+    //`;
+    //document.getElementById("info").innerHTML=tmp;
+    //console.log("displaying");
+//}
 
 
 
@@ -51,23 +51,33 @@ let pet4 = new Pet("Bella", "5", "Female", "Terrier", "wash", "John", "555-555-6
 
 let pet5 = new Pet("JoJo", "16", "Male", "Poodle", "trim", "Mike", "555-555-5560");
 
+function isValid(aPet){
+    let valid=true;
+    if(aPet.name=="" || aPet.service=="" || aPet.contactPhone==""){
+        //if we arrive here the pet is not valid
+        valid=false;
+    }
 
+    return valid;
+}
 
 //register pets
 function register(){
     console.log("Registering");
     //get the info from the inputs ***getElementById().value
-let petName=document.getElementById("txtName").value;
-let petAge=document.getElementById("textAge").value;
-let petGender=document.getElementById("txtGender").value;
-let petBreed=document.getElementById("txtBreed").value;
-let petService=document.getElementById("selService".value);
-let petOwner=document.getElementById("txtOwner").value;
-let contactPhone=document.getElementById("txtPhone").value;
+    let petName=document.getElementById("txtName").value;
+    let petAge=document.getElementById("textAge").value;
+    let petGender=document.getElementById("txtGender").value;
+    let petBreed=document.getElementById("txtBreed").value;
+    let petService=document.getElementById("selService".value);
+    let petOwner=document.getElementById("txtOwner").value;
+    let contactPhone=document.getElementById("txtPhone").value;
    
     //create the object using the constructor
-let newPet= new Pet(petName, petAge, petGender, petBreed, petService, petOwner, contactPhone);
-    
+    let newPet= new Pet(petName, petAge, petGender, petBreed, petService, petOwner, contactPhone);
+    if(isValid(newPet)==true){
+
+ 
     //push the object in on the array
    salon.pets.push(newPet);
     
@@ -77,21 +87,26 @@ let newPet= new Pet(petName, petAge, petGender, petBreed, petService, petOwner, 
       //clear the form
       clear();
 }
+else{
+    ("Add a name for a pet")
+}
+//function clear(){
+    //let inputs=document.getElementsByTagName('input');
+    //let inputs=document.querySelector("input");
+    //for (let i=0;i<inputs.length;i++){
+      //  inputs[i].value="";
+    //}
+    //document.getElementById("selService").value="default";
+   $("input").val("");
 
-function clear(){
-    let inputs=document.getElementsByTagName('input');
-    for (let i=0;i<inputs.length;i++){
-        inputs[i].value="";
-    }
-    return
-
-    console.log(inputs);
+   // console.log(inputs);
 }
 
 function init(){
     //hook events triggered events
-    displaySalonInfo();
-    salon.pets.push(katy,bella);
+    //displaySalonInfo();
+    salon.pets.push(pet1,pet2,pet3,pet4,pet5);
+    displayTable();
 }
 
 window.onload=init;
