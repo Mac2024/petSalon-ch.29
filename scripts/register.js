@@ -57,7 +57,9 @@ function isValid(aPet){
         //if we arrive here the pet is not valid
         valid=false;
     }
-
+    else{
+        ("Add a name for a pet")
+    }
     return valid;
 }
 
@@ -66,7 +68,7 @@ function register(){
     console.log("Registering");
     //get the info from the inputs ***getElementById().value
     let petName=document.getElementById("txtName").value;
-    let petAge=document.getElementById("textAge").value;
+    let petAge=document.getElementById("txtAge").value;
     let petGender=document.getElementById("txtGender").value;
     let petBreed=document.getElementById("txtBreed").value;
     let petService=document.getElementById("selService".value);
@@ -86,17 +88,14 @@ function register(){
       console.log(salon.pets);  
       //clear the form
       clear();
-}
-else{
-    ("Add a name for a pet")
-}
-//function clear(){
-    //let inputs=document.getElementsByTagName('input');
-    //let inputs=document.querySelector("input");
-    //for (let i=0;i<inputs.length;i++){
-      //  inputs[i].value="";
-    //}
-    //document.getElementById("selService").value="default";
+}}
+
+function clear(){
+    let inputs=document.getElementsByTagName('input');
+    for (let i=0;i<inputs.length;i++){
+       inputs[i].value="";
+    }
+    document.getElementById("selService").value="default";
    $("input").val("");
 
    // console.log(inputs);
